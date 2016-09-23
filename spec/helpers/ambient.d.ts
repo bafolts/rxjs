@@ -3,6 +3,9 @@ declare module 'mocha/lib/interfaces/common' {
 }
 
 declare module 'escape-string-regexp' {
+    interface escapeRe extends Function {
+        (re: string): string;
+    }
 }
 
 declare module 'mocha/lib/suite' {

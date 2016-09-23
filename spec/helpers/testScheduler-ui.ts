@@ -195,7 +195,7 @@ module.exports = function(suite) {
 
     context.it.only = function(title, fn) {
       const test = it(title, fn);
-      const reString = '^' + (<any>escapeRe)(test.fullTitle()) + '$';
+      const reString = '^' + (<any>escapeRe)(escapeRe(test.fullTitle())) + '$';
       mocha.grep(new RegExp(reString));
       return test;
     };
